@@ -12,7 +12,10 @@ yaletown = Store.create(name: "Yaletown", annual_revenue: 430000, mens_apparel: 
 
 puts("The number of stores is:", Store.count)
 
+@mens_stores = Store.where(mens_apparel: true)
+@mens_stores.each{|store| 
+puts(store.name, store.annual_revenue)}
 
-# Surrey (annual_revenue of 224000, carries women's apparel only)
-# Whistler (annual_revenue of 1900000 carries men's apparel only)
-# Yaletown (annual_revenue of 430000 carries men's and women's apparel)
+@womens_stores_low_rev = Store.where("womens_apparel = ? AND annual_revenue < ?", true, 1000000)
+@womens_stores_low_rev.each{|store| 
+  puts(store.name, store.annual_revenue)}
