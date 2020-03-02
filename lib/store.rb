@@ -9,6 +9,14 @@ class Store < ActiveRecord::Base
     errors.add(:womens_apparel, "Store must at least carry men's or women's apparel")
   end
 end
+before_destroy :check_for_employees
 
+private
+  def check_for_employees
+    if Employee.where(store_id: self.id).exists?
+    errors[:base] << "Cannot delete store with employees!"
+      return false
+    end
+  end
 
 end

@@ -19,9 +19,9 @@ puts "----------"
 # p = Store.create(name: "Burnaby", annual_revenue: -1, mens_apparel: true, womens_apparel: true)
 # p = Store.create(name: "Burnaby", annual_revenue: 1.5, mens_apparel: true, womens_apparel: true)
 # p = Store.create(name: "Burnaby", annual_revenue: 10000, mens_apparel: false, womens_apparel: false)
-puts "Please enter a store name"
-store_new = gets.chomp
-p = Store.create(name: store_new)
-errors = p.errors.messages
-errors.each{|message|
-puts message}
+# puts "Please enter a store name"
+# store_new = gets.chomp
+# p = Store.create(name: store_new)
+# errors = p.errors.messages
+# errors.each{|message|
+# puts message}
